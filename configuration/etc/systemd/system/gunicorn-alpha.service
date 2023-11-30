@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn Instance to Serve Alpha
+After=network.target
+
+[Service]
+User=www
+Group=www-data
+
+WorkingDirectory=/var/www/web-alpha
+Environment="PATH=/var/www/python/pv310/bin"
+ExecStart=/var/www/python/pv310/bin/gunicorn --workers 3 --bind unix:alpha.sock -m 007 backend.uwsgi:alpha
+
+[Install]
+WantedBy=multi-user.target
