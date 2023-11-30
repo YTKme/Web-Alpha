@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn Instance to Serve Sandbox
+After=network.target
+
+[Service]
+User=www
+Group=www-data
+
+WorkingDirectory=/var/www/Web-Alpha/sandbox
+Environment="PATH=/var/www/python/pv310/bin"
+ExecStart=/var/www/python/pv310/bin/gunicorn --workers 3 --bind unix:sandbox.sock -m 007 backend.uwsgi:sandbox
+
+[Install]
+WantedBy=multi-user.target
