@@ -3,9 +3,15 @@
  * Main Application
  */
 
+import Navigation from "./component/Navigation"
+
+import './Application.css'
+
 function Application() {
   return (
-    <h1>Hello Vite!</h1>
+    <>
+      <Navigation />
+    </>
   )
 }
 
