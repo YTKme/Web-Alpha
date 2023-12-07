@@ -1,0 +1,8 @@
+Flask
+flask-login
+Flask-Session
+Flask-SQLAlchemy
+mysql-connector-python
+okta-jwt-verifier
+requests
+SQLAlchemy
