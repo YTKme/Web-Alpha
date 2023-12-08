@@ -4,13 +4,13 @@
  */
 
 import './Application.css'
-import { ModeToggleBootstrap } from './component/ModeToggle/ModeToggleBootstrap'
+import { ModeToggleBootstrapBase } from './component/ModeToggle/ModeToggleBootstrapBase'
 
 function Application() {
   return (
     <>
       <h1>Hello Vite Alpha!</h1>
-      <ModeToggleBootstrap />
+      <ModeToggleBootstrapBase />
     </>
   )
 }
