@@ -4,7 +4,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export function ModeToggleBootstrap() {
+export function ModeToggleBootstrapBase() {
   return (
     <>
       <svg xmlns="http://www.w3.org/2000/svg" className="d-none">
