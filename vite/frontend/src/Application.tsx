@@ -11,6 +11,7 @@ function Application() {
   return (
     <>
       <Navigation />
+      <h1>Hello Vite Alpha!</h1>
     </>
   )
 }
