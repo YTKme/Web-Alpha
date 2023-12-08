@@ -24,6 +24,7 @@
     "@heroicons/react": "^2",
     "@popperjs/core": "^2.11",
     "bootstrap": "^5.3",
+    "bootstrap-icons": "^1.11",
     "clsx": "^1",
     "react": "^18",
     "react-dom": "^18",
