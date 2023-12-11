@@ -1,5 +1,5 @@
 /**
- * Mode Toggle Bootstrap
+ * Mode Toggle Bootstrap Base
  */
 
 import 'bootstrap/dist/css/bootstrap.min.css'
