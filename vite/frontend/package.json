@@ -20,6 +20,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26",
     "@headlessui/react": "^1.7",
     "@heroicons/react": "^2",
     "@popperjs/core": "^2.11",
