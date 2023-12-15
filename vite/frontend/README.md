@@ -22,3 +22,4 @@ Vite
 
 * [Tailwind CSS Theme Configuration](https://tailwindcss.com/docs/theme)
 * [Tailwind CSS Default Configuration Full](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/config.full.js)
+* [Tailwind CSS Dark/Light/System Base Change Theme With Local Storage | React JS Dark Mode](https://www.youtube.com/watch?v=NMTq5HIxMa8)
