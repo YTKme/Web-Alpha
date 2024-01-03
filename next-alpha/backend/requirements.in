@@ -1,0 +1,10 @@
+Flask
+flask-login
+Flask-Session
+Flask-SQLAlchemy
+gunicorn ; sys_platform != 'win32'
+mysql-connector-python
+okta-jwt-verifier
+requests
+sphinx
+SQLAlchemy
