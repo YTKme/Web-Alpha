@@ -11,7 +11,7 @@ export default function Login() {
     <div className='d-flex w-100 h-100'>
       <div className='w-100 m-auto'>
         <header className='text-center'>
-          <Image src='/res/img/onigiri-a1.svg' alt='Onigiri Logo' width={128} height={128} />
+          <Image src='/res/img/onigiri-1.svg' alt='Onigiri Logo' width={128} height={128} />
           <h1>Please Login</h1>
         </header>
         <main className='text-center'>
