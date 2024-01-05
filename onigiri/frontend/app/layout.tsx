@@ -21,14 +21,11 @@ export default function RootLayout({
   children: React.ReactNode,
 }) {
   return (
-    <html lang='en' data-bs-theme='auto'>
-      <head>
-        <script src='/res/js/color-modes.js' />
-      </head>
-      <body>
-        <ModeToggleBootstrap />
-        {children}
-      </body>
+    <html lang='en' data-bs-theme='light'>
+    <body>
+      <ModeToggleBootstrap />
+      {children}
+    </body>
     </html>
   )
 }
