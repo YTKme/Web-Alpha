@@ -1,16 +1,16 @@
 {
-  "name": "persimmon",
+  "name": "onigiri",
   "version": "0.0.1",
   "private": true,
-  "description": "❤️ Persimmon ❤️",
+  "description": "🍙 Onigiri 🍙",
   "keywords": [
-    "persimmon"
+    "onigiri"
   ],
-  "license": "Adobe",
+  "license": "None",
   "author": "Yan Kuang",
   "repository": {
     "type": "git",
-    "url": "https://git.corp.adobe.com/3DIQE/Persimmon.git"
+    "url": "https://github.com/YTKme/Web-Alpha"
   },
   "scripts": {
     "dev": "next dev",
