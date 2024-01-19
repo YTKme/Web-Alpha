@@ -11,7 +11,7 @@ import ModeToggleBootstrap from './component/ModeToggle/ModeToggleBootstrap'
 function Application() {
   return (
     <>
-      <h1>Hello Vite Alpha!</h1>
+      <h1>Hello Watermelon!</h1>
       <ModeToggleBootstrap />
     </>
   )
