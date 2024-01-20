@@ -2,36 +2,20 @@
  * Login
  */
 
-import { useEffect, useState } from 'react';
 // Okta
 import { useOktaAuth } from '@okta/okta-react';
 
-import './Login.scss'
+// Style
+import './scss/Login.scss'
 
 import watermelonLogo from '/res/img/watermelon.svg'
-import { UserClaims } from '@okta/okta-auth-js';
 
 function Login() {
   // State
   const { authState, oktaAuth } = useOktaAuth();
-  const [userInfo, setUserInfo] = useState<UserClaims | undefined>(undefined);
-
-  useEffect(() => {
-    if (!authState || !authState.isAuthenticated) {
-      // When user isn't authenticated, forget any user info
-      setUserInfo(undefined);
-    } else {
-      oktaAuth.getUser().then((info) => {
-        setUserInfo(info);
-      }).catch((err) => {
-        console.error(err);
-      });
-    }
-  }, [authState, oktaAuth]); // Update if authState changes
 
   const login = async () => {
-    oktaAuth.signInWithRedirect({ originalUri: '/home' });
-    console.debug(`Login: ${oktaAuth.isAuthenticated}`);
+    oktaAuth.signInWithRedirect({ originalUri: '/' });
   };
 
   if (!authState) {
@@ -43,25 +27,20 @@ function Login() {
   return (
     <div className='d-flex flex-column h-100'>
       <div className='d-flex justify-content-center align-items-center flex-grow-1'>
+        {/* Authenticated */}
         {authState.isAuthenticated && (
           <main className='text-center'>
-            <h1>Authenticated: Name</h1>
+            <h1>Authenticated</h1>
           </main>
         )}
-
+        {/* Not Authenticated */}
         {!authState.isAuthenticated && (
           <main className='text-center'>
-            <img src={watermelonLogo} width='128' alt='Watermelon Logo' />
+            <img src={watermelonLogo} width={128} alt='Watermelon Logo' />
             <h1>Please Login</h1>
-            <h2></h2>
             <form>
               <section className='text-center'>
-                <button
-                  className='btn btn-primary w-100 py-2'
-                  onClick={login}
-                >
-                  Login
-                </button>
+                <button className='btn btn-primary w-100 py-2' type='button' onClick={login}>Login</button>
               </section>
             </form>
           </main>
