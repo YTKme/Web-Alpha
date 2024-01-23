@@ -2,8 +2,10 @@
  * Login
  */
 
+import { useEffect, useState } from 'react';
 // Okta
 import { useOktaAuth } from '@okta/okta-react';
+import { UserClaims } from '@okta/okta-auth-js';
 
 // Style
 import './scss/Login.scss'
@@ -13,9 +15,21 @@ import watermelonLogo from '/res/img/watermelon.svg'
 function Login() {
   // State
   const { authState, oktaAuth } = useOktaAuth();
+  const [userProfile, setUserProfile] = useState<UserClaims | null>(null);
+
+  useEffect(() => {
+    if (!authState || !authState.isAuthenticated) {
+      // When user is not authenticated, forget any `userProfile` information
+      setUserProfile(null);
+    } else {
+      oktaAuth.getUser().then((profile) => {
+        setUserProfile(profile);
+      });
+    }
+  });
 
   const login = async () => {
-    oktaAuth.signInWithRedirect({ originalUri: '/' });
+    oktaAuth.signInWithRedirect({ originalUri: '/login' });
   };
 
   if (!authState) {
@@ -28,9 +42,9 @@ function Login() {
     <div className='d-flex flex-column h-100'>
       <div className='d-flex justify-content-center align-items-center flex-grow-1'>
         {/* Authenticated */}
-        {authState.isAuthenticated && (
+        {authState.isAuthenticated && userProfile && (
           <main className='text-center'>
-            <h1>Authenticated</h1>
+            <h1>Authenticated: {userProfile.name}</h1>
           </main>
         )}
         {/* Not Authenticated */}
