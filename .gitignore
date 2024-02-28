@@ -4,6 +4,12 @@
 
 metadata.json
 
+########
+# Vite #
+########
+
+vite/frontend/package-lock.json
+
 ###########
 # Sandbox #
 ###########
