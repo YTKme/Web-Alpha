@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "dev",
+            "path": "vite/frontend",
+            "problemMatcher": [],
+            "label": "vite npm dev",
+            "detail": "vite"
+        }
+    ]
+}
