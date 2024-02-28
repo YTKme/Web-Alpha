@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => {
   return {
     // Environment Variable
     define: {
-      'process.env.CLIENT_ID': JSON.stringify(env.Gruis_Stage_SPA_CLIENT_ID || ''),
-      'process.env.ISSUER': JSON.stringify(env.Gruis_Stage_SPA_ISSUER || ''),
+      'process.env.CLIENT_ID': JSON.stringify(env.Watermelon_SPA_CLIENT_ID || ''),
+      'process.env.ISSUER': JSON.stringify(env.Watermelon_SPA_ISSUER || ''),
     },
 
     // Plugin
