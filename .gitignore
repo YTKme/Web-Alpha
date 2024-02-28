@@ -4,12 +4,6 @@
 
 metadata.json
 
-########
-# Vite #
-########
-
-vite/frontend/package-lock.json
-
 ###########
 # Sandbox #
 ###########
@@ -21,6 +15,12 @@ vite/frontend/package-lock.json
 ##############
 # Production #
 ##############
+
+###########
+# Onigiri #
+###########
+
+onigiro/frontend/package-lock.json
 
 ##############
 # Watermelon #
