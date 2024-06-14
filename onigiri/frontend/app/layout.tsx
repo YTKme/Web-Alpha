@@ -7,7 +7,6 @@ import { Viewport } from 'next'
 // CSS
 import '@/style/global.scss';
 import './global.css';
-import { ModeToggleBootstrap } from '@/component/ModeToggle/ModeToggleBootstrap';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -23,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang='en' data-bs-theme='light'>
     <body>
-      <ModeToggleBootstrap />
       {children}
     </body>
     </html>
