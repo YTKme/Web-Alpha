@@ -4,7 +4,7 @@
 
 'use client';
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 import Image from 'next/image';
 
@@ -14,6 +14,10 @@ import Check2 from 'bootstrap-icons/icons/check2.svg';
 
 
 export function ModeToggleBootstrap() {
+  // State
+  // const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  // Effect
   useEffect(() => {
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, [])
