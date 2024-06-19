@@ -4,7 +4,7 @@
 
 import type { Metadata } from 'next'
 
-import { ModeToggleBootstrap } from '@/component/ModeToggle/ModeToggleBootstrap';
+import { ColorModeBootstrap } from '@/component/ModeToggle/ColorModeBootstrap'
 
 export const metadata: Metadata = {
   title: '🍙 Onigiri 🍙 Bootstrap 🍙',
@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <div className='d-flex w-100 h-100'>
       <div className='w-100'>
-        <ModeToggleBootstrap />
+        <ColorModeBootstrap />
         <header>
           <h1>Bootstrap</h1>
         </header>
