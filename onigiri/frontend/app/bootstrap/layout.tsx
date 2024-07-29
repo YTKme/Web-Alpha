@@ -2,7 +2,12 @@
  * Bootstrap Layout
  */
 
-import { Viewport } from 'next'
+import { ReactNode } from 'react';
+
+import { Viewport } from 'next';
+
+// Context
+import BootstrapProvider from '@/context/BootstrapContext';
 
 // CSS
 import './bootstrap.scss';
@@ -16,13 +21,15 @@ export const viewport: Viewport = {
 export default function BootstrapLayout({
   children,
 }: {
-  children: React.ReactNode,
+  children: ReactNode,
 }) {
   return (
-    <html lang='en' data-bs-theme='light'>
-    <body>
-      {children}
-    </body>
+    <html lang='en' data-bs-theme='auto'>
+      <body>
+        <BootstrapProvider>
+          {children}
+        </BootstrapProvider>
+      </body>
     </html>
   )
 }
