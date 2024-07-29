@@ -9,7 +9,7 @@ import {
   useContext,
   useEffect,
   useState
-} from 'react'
+} from 'react';
 
 type Theme = 'light' | 'dark' | 'system'
 
