@@ -1,5 +1,5 @@
 /**
- * Bootstrap Layout
+ * Bootstrap Alpha Layout
  */
 
 import { ReactNode } from 'react';
@@ -7,6 +7,7 @@ import { ReactNode } from 'react';
 import { Viewport } from 'next';
 
 // Context
+import { BootstrapColorModeSimpleProvider } from '@/context/BootstrapColorModeSimpleContext';
 import BootstrapProvider from '@/context/BootstrapContext';
 
 // CSS
@@ -27,7 +28,9 @@ export default function BootstrapLayout({
     <html lang='en' data-bs-theme='auto'>
       <body>
         <BootstrapProvider>
+          <BootstrapColorModeSimpleProvider>
           {children}
+          </BootstrapColorModeSimpleProvider>
         </BootstrapProvider>
       </body>
     </html>
