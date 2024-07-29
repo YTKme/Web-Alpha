@@ -23,5 +23,8 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8",
     "editor.tabSize": 4
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
   }
 }
