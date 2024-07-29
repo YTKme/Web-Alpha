@@ -4,6 +4,8 @@
 
 'use client';
 
+import CircleHalf from 'bootstrap-icons/icons/circle-half.svg';
+
 import { useBootstrapColorModeSimple } from "@/context/BootstrapColorModeSimpleContext";
 
 export default function BootstrapColorModeSimple() {
@@ -22,6 +24,12 @@ export default function BootstrapColorModeSimple() {
       <button type="button" className="btn btn-secondary m-1" onClick={() => setColorMode('auto')} disabled={colorMode === 'auto'}>
         System
       </button>
+
+      <div>
+        <CircleHalf width='2em' />
+        <CircleHalf width={16} height={16} />
+        <CircleHalf width={32} height={32} />
+      </div>
 
       <div className="dropdown">
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="true">
