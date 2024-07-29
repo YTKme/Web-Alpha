@@ -52,12 +52,19 @@ class BaseConfiguration(object):
 class ProductionConfiguration(BaseConfiguration):
     """Production Configuration"""
 
-    SECRET_KEY = ''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=32))
+    PREFERRED_URL_SCHEME = 'https'
+
+    SECRET_KEY = ''.join(random.choices(
+        string.ascii_uppercase + string.ascii_lowercase + string.digits,
+        k=32
+    ))
     DEBUG = False
 
 
 class DevelopmentConfiguration(BaseConfiguration):
     """Development Configuration"""
+
+    PREFERRED_URL_SCHEME = 'http'
 
     SECRET_KEY = 'development'
     DEBUG = True

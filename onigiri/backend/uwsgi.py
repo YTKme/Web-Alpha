@@ -1,8 +1,8 @@
 from backend.application import create_application
 
 
-persimmon = create_application()
+onigiri = create_application()
 
 
 if __name__ == '__main__':
-    persimmon.run()
+    onigiri.run()
