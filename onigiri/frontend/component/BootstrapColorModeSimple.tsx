@@ -4,18 +4,22 @@
 
 'use client';
 
+import { useBootstrapColorModeSimple } from "@/context/BootstrapColorModeSimpleContext";
+
 export default function BootstrapColorModeSimple() {
+  // Use State
+  const { colorMode, setColorMode } = useBootstrapColorModeSimple();
 
   return (
     <div>
       <p>Current Theme:</p>
-      <button type="button" className="btn btn-light m-1">
+      <button type="button" className="btn btn-light m-1" onClick={() => setColorMode('light')} disabled={colorMode === 'light'}>
         Light
       </button>
-      <button type="button" className="btn btn-dark m-1">
+      <button type="button" className="btn btn-dark m-1" onClick={() => setColorMode('dark')} disabled={colorMode === 'dark'}>
         Dark
       </button>
-      <button type="button" className="btn btn-secondary m-1">
+      <button type="button" className="btn btn-secondary m-1" onClick={() => setColorMode('auto')} disabled={colorMode === 'auto'}>
         System
       </button>
 

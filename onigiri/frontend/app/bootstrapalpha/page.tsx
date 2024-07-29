@@ -1,5 +1,5 @@
 /**
- * Bootstrap Page
+ * Bootstrap Alpha Page
  */
 
 import type { Metadata } from 'next';
