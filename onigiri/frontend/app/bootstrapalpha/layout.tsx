@@ -11,7 +11,7 @@ import { BootstrapColorModeSimpleProvider } from '@/context/BootstrapColorModeSi
 import BootstrapProvider from '@/context/BootstrapContext';
 
 // CSS
-import './bootstrap.scss';
+import './bootstrapalpha.scss';
 
 export const viewport: Viewport = {
   width: 'device-width',
