@@ -4,7 +4,7 @@
 
 import type { Metadata } from 'next';
 
-import BootstrapColorModeSimple from '@/component/BootstrapColorModeSimple';
+import BootstrapColorModeSimple from '@/component/BootstrapColorModeAlpha';
 
 export const metadata: Metadata = {
   title: '🍙 Onigiri 🍙 Bootstrap 🍙',

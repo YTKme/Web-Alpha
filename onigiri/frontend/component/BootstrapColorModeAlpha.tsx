@@ -6,11 +6,11 @@
 
 import CircleHalf from 'bootstrap-icons/icons/circle-half.svg';
 
-import { useBootstrapColorModeSimple } from "@/context/BootstrapColorModeSimpleContext";
+import { useBootstrapColorModeAlpha } from "@/context/BootstrapColorModeAlphaContext";
 
-export default function BootstrapColorModeSimple() {
+export default function BootstrapColorModeAlpha() {
   // Use Context
-  const { colorMode, setColorMode } = useBootstrapColorModeSimple();
+  const { colorMode, setColorMode } = useBootstrapColorModeAlpha();
 
   return (
     <div>
