@@ -7,12 +7,10 @@ import { ReactNode } from 'react';
 import { Viewport } from 'next';
 
 // Context
-import {
-  BootstrapColorModeSimpleProvider
-} from '@/context/BootstrapColorModeSimpleContext';
 import BootstrapProvider from '@/context/BootstrapContext';
 
 // CSS
+import { BootstrapColorModeAlphaProvider } from '@/context/BootstrapColorModeAlphaContext';
 import './bootstrapalpha.scss';
 
 export const viewport: Viewport = {
@@ -30,9 +28,9 @@ export default function BootstrapLayout({
     <html lang='en' data-bs-theme='auto'>
       <body>
         <BootstrapProvider>
-          <BootstrapColorModeSimpleProvider>
+          <BootstrapColorModeAlphaProvider>
             {children}
-          </BootstrapColorModeSimpleProvider>
+          </BootstrapColorModeAlphaProvider>
         </BootstrapProvider>
       </body>
     </html>
