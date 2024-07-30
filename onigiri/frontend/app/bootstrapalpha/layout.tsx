@@ -7,7 +7,9 @@ import { ReactNode } from 'react';
 import { Viewport } from 'next';
 
 // Context
-import { BootstrapColorModeSimpleProvider } from '@/context/BootstrapColorModeSimpleContext';
+import {
+  BootstrapColorModeSimpleProvider
+} from '@/context/BootstrapColorModeSimpleContext';
 import BootstrapProvider from '@/context/BootstrapContext';
 
 // CSS
@@ -29,7 +31,7 @@ export default function BootstrapLayout({
       <body>
         <BootstrapProvider>
           <BootstrapColorModeSimpleProvider>
-          {children}
+            {children}
           </BootstrapColorModeSimpleProvider>
         </BootstrapProvider>
       </body>

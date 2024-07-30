@@ -12,6 +12,9 @@ import {
   useState
 } from "react";
 
+// JavaScript
+// import '../public/res/js/color-modes.js';
+
 interface BootstrapContextType {
   bootstrap: any
 }
