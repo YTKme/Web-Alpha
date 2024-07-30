@@ -6,22 +6,37 @@
 
 import CircleHalf from 'bootstrap-icons/icons/circle-half.svg';
 
-import { useBootstrapColorModeAlpha } from "@/context/BootstrapColorModeAlphaContext";
+import { useBootstrapAlphaColorMode } from "@/context/BootstrapAlphaColorModeContext";
 
-export default function BootstrapColorModeAlpha() {
+export default function BootstrapAlphaColorMode() {
   // Use Context
-  const { colorMode, setColorMode } = useBootstrapColorModeAlpha();
+  const { colorModeAlpha, setColorModeAlpha } = useBootstrapAlphaColorMode();
 
   return (
     <div>
       <p>Current Theme:</p>
-      <button type="button" className="btn btn-light m-1" onClick={() => setColorMode('light')} disabled={colorMode === 'light'}>
+      <button
+        type="button"
+        className="btn btn-light m-1"
+        onClick={() => setColorModeAlpha('light')}
+        disabled={colorModeAlpha === 'light'}
+      >
         Light
       </button>
-      <button type="button" className="btn btn-dark m-1" onClick={() => setColorMode('dark')} disabled={colorMode === 'dark'}>
+      <button
+        type="button"
+        className="btn btn-dark m-1"
+        onClick={() => setColorModeAlpha('dark')}
+        disabled={colorModeAlpha === 'dark'}
+      >
         Dark
       </button>
-      <button type="button" className="btn btn-secondary m-1" onClick={() => setColorMode('auto')} disabled={colorMode === 'auto'}>
+      <button
+        type="button"
+        className="btn btn-secondary m-1"
+        onClick={() => setColorModeAlpha('auto')}
+        disabled={colorModeAlpha === 'auto'}
+      >
         System
       </button>
 
