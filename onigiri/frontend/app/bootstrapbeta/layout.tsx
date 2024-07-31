@@ -1,5 +1,5 @@
 /**
- * Bootstrap Alpha Layout
+ * Bootstrap Beta Layout
  */
 
 'use client';

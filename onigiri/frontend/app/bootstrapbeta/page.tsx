@@ -1,5 +1,5 @@
 /**
- * Bootstrap Alpha Page
+ * Bootstrap Beta Page
  */
 
 import BootstrapBetaColorMode from '@/component/BootstrapBetaColorMode';
