@@ -2,6 +2,7 @@
  * Bootstrap Alpha Page
  */
 
+import BootstrapBetaColorMode from '@/component/BootstrapBetaColorMode';
 import type { Metadata } from 'next';
 
 
@@ -18,6 +19,7 @@ export default function Page() {
           <h1>Bootstrap</h1>
         </header>
         <main className='text-center'>
+          <BootstrapBetaColorMode />
         </main>
       </div>
     </div>
