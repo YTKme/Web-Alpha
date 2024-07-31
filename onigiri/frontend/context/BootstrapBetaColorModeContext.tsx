@@ -4,27 +4,13 @@
 
 'use client';
 
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState
-} from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
+export type Theme = 'light' | 'dark' | 'auto';
 
-type BootstrapBetaColorMode = 'light' | 'dark' | 'auto';
-
-interface BootstrapBetaColorModeContextType {
-  colorModeBeta: BootstrapBetaColorMode
-  showColorMode: (colorModeBeta: BootstrapBetaColorMode) => void
-};
-
-const BootstrapBetaColorModeContext = createContext<BootstrapBetaColorModeContextType | undefined>(undefined);
-
-export function getInitialColorMode(): BootstrapBetaColorMode {
+export function getInitialTheme(): Theme {
   if (typeof window !== 'undefined') {
-    const storedTheme = localStorage.getItem('colormode') as BootstrapBetaColorMode | null;
+    const storedTheme = localStorage.getItem('theme') as Theme | null;
     if (storedTheme) {
       return storedTheme;
     }
@@ -32,43 +18,47 @@ export function getInitialColorMode(): BootstrapBetaColorMode {
     return prefersDark ? 'dark' : 'light';
   }
   return 'auto';
+}
+
+interface ThemeContextProps {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+}
+
+const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
 };
 
-export function BootstrapBetaColorModeProvider({
-  children,
-}: {
-  children: ReactNode,
-}) {
-  // Use State
-  const [colorModeBeta, setColorModeBeta] = useState<BootstrapBetaColorMode>('auto');
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [theme, setThemeState] = useState<Theme>('auto');
 
   useEffect(() => {
-    const initialColorMode = getInitialColorMode();
-    setColorModeBeta(initialColorMode);
-    document.documentElement.setAttribute('data-bs-theme', initialColorMode);
+    const initialTheme = getInitialTheme();
+    setThemeState(initialTheme);
+    document.documentElement.setAttribute('data-bs-theme', initialTheme);
   }, []);
 
-  const showColorMode = (colorModeBeta: BootstrapBetaColorMode) => {
-    setColorModeBeta(colorModeBeta);
-    if (colorModeBeta === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-bs-theme', 'dark')
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
+    document.documentElement.setAttribute('data-bs-theme', newTheme);
+    if (newTheme === 'auto') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-bs-theme', prefersDark ? 'dark' : 'light');
     } else {
-      document.documentElement.setAttribute('data-bs-theme', colorModeBeta)
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
     }
-    localStorage.setItem('colormode', colorModeBeta);
+    localStorage.setItem('theme', newTheme);
   };
 
   return (
-    <BootstrapBetaColorModeContext.Provider value={{ colorModeBeta, showColorMode }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
-    </BootstrapBetaColorModeContext.Provider>
+    </ThemeContext.Provider>
   );
-};
-
-export const useBootstrapBetaColorMode = (): BootstrapBetaColorModeContextType => {
-  const context = useContext(BootstrapBetaColorModeContext)
-  if (!context) {
-    throw new Error('useBootstrapBetaColorMode must be used within a BootstrapBetaColorModeProvider')
-  }
-  return context;
 };
