@@ -1,5 +1,5 @@
 /**
- * Bootstrap Alpha Color Mode
+ * Bootstrap Beta Color Mode
  */
 
 'use client';
