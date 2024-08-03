@@ -27,11 +27,11 @@ export default function BootstrapLayout({
   children: ReactNode,
 }) {
   return (
-    <html lang='en' data-bs-theme='auto'>
+    <html lang='en'>
       <body>
         <script src='res/js/color-modes.js' />
         <BootstrapGammaProvider>
-            {children}
+          {children}
         </BootstrapGammaProvider>
       </body>
     </html>
