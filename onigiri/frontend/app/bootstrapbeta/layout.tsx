@@ -9,6 +9,9 @@ import { ReactNode } from 'react';
 import { Viewport } from 'next';
 
 // Context
+import {
+  BootstrapBetaColorModeProvider
+} from '@/context/BootstrapBetaColorModeContext';
 import BootstrapBetaProvider from '@/context/BootstrapBetaContext';
 
 // CSS
@@ -29,7 +32,9 @@ export default function BootstrapLayout({
     <html lang='en'>
       <body>
         <BootstrapBetaProvider>
-          {children}
+          <BootstrapBetaColorModeProvider>
+            {children}
+          </BootstrapBetaColorModeProvider>
         </BootstrapBetaProvider>
       </body>
     </html>
