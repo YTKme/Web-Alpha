@@ -47,7 +47,7 @@ export default function BootstrapBetaProvider({
 export const useBootstrapBeta = (): BootstrapBetaContextType => {
   const context = useContext(BootstrapBetaContext)
   if (!context) {
-    throw new Error('useBootstrap must be used within a BootstrapProvider')
+    throw new Error('useBootstrapBeta must be used within a BootstrapBetaProvider')
   }
   return context;
 }

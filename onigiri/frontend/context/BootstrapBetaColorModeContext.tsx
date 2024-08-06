@@ -4,61 +4,79 @@
 
 'use client';
 
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from "react";
 
-export type Theme = 'light' | 'dark' | 'auto';
+export type BootstrapBetaColorMode = 'light' | 'dark' | 'system';
 
-export function getInitialTheme(): Theme {
-  if (typeof window !== 'undefined') {
-    const storedTheme = localStorage.getItem('theme') as Theme | null;
-    if (storedTheme) {
-      return storedTheme;
-    }
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefersDark ? 'dark' : 'light';
-  }
-  return 'auto';
-}
-
-interface ThemeContextProps {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-}
-
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
+interface BootstrapBetaColorModeContextType {
+  colorModeBeta: BootstrapBetaColorMode
+  setColorModeBeta: (colorModeBeta: BootstrapBetaColorMode) => void
 };
 
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setThemeState] = useState<Theme>('auto');
+// Context
+const BootstrapBetaColorModeContext = createContext<BootstrapBetaColorModeContextType | undefined>(undefined);
 
-  useEffect(() => {
-    const initialTheme = getInitialTheme();
-    setThemeState(initialTheme);
-    document.documentElement.setAttribute('data-bs-theme', initialTheme);
-  }, []);
+// Provider
+export function BootstrapBetaColorModeProvider({
+  children,
+}: {
+  children: ReactNode,
+}) {
+  // Use State
+  const [colorModeBeta, setColorModeBeta] = useState<BootstrapBetaColorMode>('system');
 
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-    document.documentElement.setAttribute('data-bs-theme', newTheme);
-    if (newTheme === 'auto') {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-bs-theme', prefersDark ? 'dark' : 'light');
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', newTheme);
-    }
-    localStorage.setItem('theme', newTheme);
+  const showColorModeBeta = (
+    colorModeBeta: BootstrapBetaColorMode,
+    focus: boolean = false
+  ) => {
+    const switcher = document.querySelector('#bd-theme');
+    if (!switcher) { return; }
+
+    const switcherText = document.querySelector('#bd-theme-text')
+    const activeColorModeIcon = document.querySelector('.theme-icon-active')
+    // console.debug('Active Color Mode Icon:', activeColorModeIcon);
+    const buttonToActive = document.querySelector(`[data-bs-theme-value="${colorModeBeta}"]`)
+    // console.debug('Button to Active:', buttonToActive);
+    const svgActiveButton = buttonToActive?.querySelector('path');
+    // console.debug('SVG Active Button:', svgActiveButton);
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    buttonToActive?.classList.add('active');
+    buttonToActive?.setAttribute('aria-pressed', 'true')
+    if (!activeColorModeIcon) { return; }
+    activeColorModeIcon.innerHTML = svgActiveButton?.outerHTML ?? '';
   };
 
+  // Use Effect
+  useEffect(() => {
+    // if (typeof window !== 'undefined') {
+    //   showColorModeBeta(colorModeBeta)
+    // }
+
+    showColorModeBeta(colorModeBeta);
+  }, [colorModeBeta]);
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <BootstrapBetaColorModeContext.Provider value={{ colorModeBeta, setColorModeBeta }}>
       {children}
-    </ThemeContext.Provider>
+    </BootstrapBetaColorModeContext.Provider>
   );
+};
+
+export const useBootstrapBetaColorMode = (): BootstrapBetaColorModeContextType => {
+  const context = useContext(BootstrapBetaColorModeContext)
+  if (!context) {
+    throw new Error('useBootstrapBetaColorMode must be used within a BootstrapBetaColorModeProvider')
+  }
+  return context;
 };
