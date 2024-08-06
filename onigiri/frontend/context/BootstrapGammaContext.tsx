@@ -47,7 +47,7 @@ export default function BootstrapGammaProvider({
 export const useBootstrapGamma = (): BootstrapGammaContextType => {
   const context = useContext(BootstrapGammaContext)
   if (!context) {
-    throw new Error('useBootstrapGamma must be used within a BootstrapGammaContextType')
+    throw new Error('useBootstrapGamma must be used within a BootstrapGammaProvider')
   }
   return context;
 }
