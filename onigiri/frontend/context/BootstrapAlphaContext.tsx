@@ -12,9 +12,6 @@ import {
   useState
 } from "react";
 
-// JavaScript
-// import '../public/res/js/color-modes.js';
-
 interface BootstrapAlphaContextType {
   bootstrapAlpha: any
 }
