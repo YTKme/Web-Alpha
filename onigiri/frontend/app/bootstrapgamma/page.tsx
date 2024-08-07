@@ -5,7 +5,6 @@
 import type { Metadata } from 'next';
 
 // Component
-import BootstrapGammaColorMode from '@/component/BootstrapGammaColorMode';
 
 export const metadata: Metadata = {
   title: '🍙 Onigiri 🍙 Bootstrap 🍙 Gamma 🍙',
@@ -17,10 +16,10 @@ export default function Page() {
     <div className='d-flex w-100 h-100'>
       <div className='w-100'>
         <header>
-          <h1>Bootstrap</h1>
+          <h1>Bootstrap Gamma</h1>
         </header>
         <main className='text-center'>
-          <BootstrapGammaColorMode />
+          <p>Bootstrap Gamma</p>
         </main>
       </div>
     </div>

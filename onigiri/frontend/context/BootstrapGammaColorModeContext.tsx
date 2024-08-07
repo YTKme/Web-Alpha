@@ -1,5 +1,6 @@
 /**
  * Bootstrap Gamma Color Mode Context
+ * (Not Used)
  */
 
 'use client';
