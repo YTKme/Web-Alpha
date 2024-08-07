@@ -8,12 +8,14 @@ import { ReactNode } from 'react';
 
 import { Viewport } from 'next';
 
-// Context
+// Component
+import BootstrapGammaColorMode from '@/component/BootstrapGammaColorMode';
 
+// Context
 import BootstrapGammaProvider from '@/context/BootstrapGammaContext';
 
 // CSS
-import './bootstrapgamma.scss';
+import './bootstrap-gamma.scss';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -29,9 +31,10 @@ export default function BootstrapLayout({
   return (
     <html lang='en'>
       <body>
-        <script src='res/js/color-modes.js' />
+        <script src='res/js/bootstrap-gamma-color-mode.js' />
         <BootstrapGammaProvider>
           {children}
+          <BootstrapGammaColorMode />
         </BootstrapGammaProvider>
       </body>
     </html>

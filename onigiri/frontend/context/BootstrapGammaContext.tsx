@@ -12,9 +12,6 @@ import {
   useState
 } from "react";
 
-// JavaScript
-// import '../public/res/js/color-modes.js';
-
 interface BootstrapGammaContextType {
   bootstrapGamma: any
 }
@@ -38,7 +35,7 @@ export default function BootstrapGammaProvider({
   }, [])
 
   return (
-    <BootstrapGammaContext.Provider value={{ bootstrapGamma: setBootstrapGamma }}>
+    <BootstrapGammaContext.Provider value={{ bootstrapGamma }}>
       {children}
     </BootstrapGammaContext.Provider>
   );
