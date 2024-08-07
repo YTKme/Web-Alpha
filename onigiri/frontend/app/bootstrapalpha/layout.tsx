@@ -11,7 +11,7 @@ import { BootstrapAlphaColorModeProvider } from '@/context/BootstrapAlphaColorMo
 import BootstrapAlphaProvider from '@/context/BootstrapAlphaContext';
 
 // CSS
-import './bootstrapalpha.scss';
+import './bootstrap-alpha.scss';
 
 export const viewport: Viewport = {
   width: 'device-width',
