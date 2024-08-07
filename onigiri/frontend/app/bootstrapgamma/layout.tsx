@@ -15,6 +15,7 @@ import BootstrapGammaColorMode from '@/component/BootstrapGammaColorMode';
 import BootstrapGammaProvider from '@/context/BootstrapGammaContext';
 
 // CSS
+import { BootstrapGammaColorModeProvider } from '@/context/BootstrapGammaColorModeContext';
 import './bootstrap-gamma.scss';
 
 export const viewport: Viewport = {
@@ -31,10 +32,11 @@ export default function BootstrapLayout({
   return (
     <html lang='en'>
       <body>
-        <script src='res/js/bootstrap-gamma-color-mode.js' />
         <BootstrapGammaProvider>
-          {children}
-          <BootstrapGammaColorMode />
+          <BootstrapGammaColorModeProvider>
+            {children}
+            <BootstrapGammaColorMode />
+          </BootstrapGammaColorModeProvider>
         </BootstrapGammaProvider>
       </body>
     </html>

@@ -4,12 +4,17 @@
 
 'use client';
 
+import { useBootstrapGammaColorMode } from '@/context/BootstrapGammaColorModeContext';
+
 import Check2 from 'bootstrap-icons/icons/check2.svg';
 import CircleHalf from 'bootstrap-icons/icons/circle-half.svg';
 import MoonFill from 'bootstrap-icons/icons/moon-fill.svg';
 import SunFill from 'bootstrap-icons/icons/sun-fill.svg';
 
 export default function BootstrapGammaColorMode() {
+  // Use Context
+  const { colorModeGamma, setColorModeGamma } = useBootstrapGammaColorMode();
+
   return (
     <div className='dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle'>
       {/* Toggle */}
@@ -32,6 +37,7 @@ export default function BootstrapGammaColorMode() {
             type='button'
             data-bs-theme-value='light'
             aria-pressed='false'
+            onClick={() => setColorModeGamma('light')}
           >
             <SunFill className='bi me-2' width='1em' height='1em' />
             Light
@@ -44,6 +50,7 @@ export default function BootstrapGammaColorMode() {
             type='button'
             data-bs-theme-value='dark'
             aria-pressed='false'
+            onClick={() => setColorModeGamma('dark')}
           >
             <MoonFill className='bi me-2' width='1em' height='1em' />
             Dark
@@ -56,6 +63,7 @@ export default function BootstrapGammaColorMode() {
             type='button'
             data-bs-theme-value='system'
             aria-pressed='true'
+            onClick={() => setColorModeGamma('system')}
           >
             <CircleHalf className='bi me-2' width='1em' height='1em' />
             System
