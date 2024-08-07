@@ -8,8 +8,8 @@ import type { Metadata } from 'next';
 import BootstrapDeltaColorMode from '@/component/BootstrapDeltaColorMode';
 
 export const metadata: Metadata = {
-  title: '🍙 Onigiri 🍙 Bootstrap 🍙 Gamma 🍙',
-  description: '🍙 Onigiri 🍙 Bootstrap Gamma 🍙',
+  title: '🍙 Onigiri 🍙 Bootstrap 🍙 Delta 🍙',
+  description: '🍙 Onigiri 🍙 Bootstrap Delta 🍙',
 }
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
     <div className='d-flex w-100 h-100'>
       <div className='w-100'>
         <header>
-          <h1>Bootstrap</h1>
+          <h1>Bootstrap Delta</h1>
         </header>
         <main className='text-center'>
           <BootstrapDeltaColorMode />
