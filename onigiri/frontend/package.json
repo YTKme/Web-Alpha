@@ -23,17 +23,17 @@
     "@headlessui/react": "^2.0",
     "@heroicons/react": "^2",
     "@popperjs/core": "^2",
-    "bootstrap": "^5.3",
     "bootstrap-icons": "^1.11",
+    "bootstrap": "^5.3",
     "next": "^14",
-    "react": "^18.3",
-    "react-dom": "^18.3"
+    "react-dom": "^18",
+    "react": "^18"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1",
     "@types/node": "^20",
-    "@types/react-dom": "^18.3",
-    "@types/react": "^18.3",
+    "@types/react-dom": "^18",
+    "@types/react": "^18",
     "autoprefixer": "^10",
     "eslint-config-next": "^14",
     "eslint": "^8",
