@@ -2,8 +2,6 @@
  * Bootstrap Gamma Layout
  */
 
-'use client';
-
 import { ReactNode } from 'react';
 
 import { Viewport } from 'next';
@@ -12,10 +10,10 @@ import { Viewport } from 'next';
 import BootstrapGammaColorMode from '@/component/BootstrapGammaColorMode';
 
 // Context
+import { BootstrapGammaColorModeProvider } from '@/context/BootstrapGammaColorModeContext';
 import BootstrapGammaProvider from '@/context/BootstrapGammaContext';
 
 // CSS
-import { BootstrapGammaColorModeProvider } from '@/context/BootstrapGammaColorModeContext';
 import './bootstrap-gamma.scss';
 
 export const viewport: Viewport = {
