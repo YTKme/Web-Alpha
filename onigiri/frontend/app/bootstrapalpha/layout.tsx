@@ -10,6 +10,9 @@ import { Viewport } from 'next';
 import { BootstrapAlphaColorModeProvider } from '@/context/BootstrapAlphaColorModeContext';
 import BootstrapAlphaProvider from '@/context/BootstrapAlphaContext';
 
+// Component
+import BootstrapAlphaColorMode from '@/component/BootstrapAlphaColorMode';
+
 // CSS
 import './bootstrap-alpha.scss';
 
@@ -25,11 +28,12 @@ export default function BootstrapLayout({
   children: ReactNode,
 }) {
   return (
-    <html lang='en' data-bs-theme='auto'>
+    <html lang='en'>
       <body>
         <BootstrapAlphaProvider>
           <BootstrapAlphaColorModeProvider>
             {children}
+            <BootstrapAlphaColorMode />
           </BootstrapAlphaColorModeProvider>
         </BootstrapAlphaProvider>
       </body>

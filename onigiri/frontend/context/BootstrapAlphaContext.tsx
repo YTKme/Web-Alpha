@@ -24,18 +24,18 @@ export default function BootstrapAlphaProvider({
   children: ReactNode,
 }) {
   // State
-  const [bootstrapAlpha, setBootstrapAlpha] = useState<any>(undefined);
+  const [bootstrapAlphaState, setBootstrapAlphaState] = useState<any>(undefined);
 
   // Effect
   useEffect(() => {
-    if (!bootstrapAlpha) {
+    if (!bootstrapAlphaState) {
       const js = require('bootstrap/dist/js/bootstrap.bundle.min.js');
-      setBootstrapAlpha(js);
+      setBootstrapAlphaState(js);
     }
   }, [])
 
   return (
-    <BootstrapAlphaContext.Provider value={{ bootstrapAlpha }}>
+    <BootstrapAlphaContext.Provider value={{ bootstrapAlpha: bootstrapAlphaState }}>
       {children}
     </BootstrapAlphaContext.Provider>
   );
@@ -44,7 +44,7 @@ export default function BootstrapAlphaProvider({
 export const useBootstrapAlpha = (): BootstrapAlphaContextType => {
   const context = useContext(BootstrapAlphaContext)
   if (!context) {
-    throw new Error('useBootstrapAlpha must be used within a BootstrapAlphaProvider')
+    throw new Error('useBootstrapAlpha must be used within a BootstrapAlphaContext')
   }
   return context;
 }

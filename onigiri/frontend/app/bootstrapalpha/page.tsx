@@ -4,7 +4,6 @@
 
 import type { Metadata } from 'next';
 
-import BootstrapAlphaColorMode from '@/component/BootstrapAlphaColorMode';
 
 export const metadata: Metadata = {
   title: '🍙 Onigiri 🍙 Bootstrap 🍙 Alpha 🍙',
@@ -19,7 +18,7 @@ export default function Page() {
           <h1>Bootstrap Alpha</h1>
         </header>
         <main className='text-center'>
-          <BootstrapAlphaColorMode />
+          <p>Bootstrap Alpha</p>
         </main>
       </div>
     </div>
