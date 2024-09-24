@@ -2,7 +2,6 @@
 
 import multiprocessing
 
-
 # Development Only
 reload = True
 reload_engine = 'poll'
@@ -12,8 +11,8 @@ reload_engine = 'poll'
 bind = ['0.0.0.0:8080', 'unix:onigiri.sock']
 
 # Worker Process(es)
-workers = 1
-# workers = multiprocessing.cpu_count() // 2
+# workers = 1
+workers = multiprocessing.cpu_count() // 2
 # workers = multiprocessing.cpu_count() * 2 + 1
 
 # Timeout in Second(s)
