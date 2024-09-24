@@ -1,0 +1,39 @@
+{
+  "artifactory": {
+      "hostname": "artifactory.com",
+      "repository": "repository",
+      "username": "username",
+      "password": "password"
+  },
+  "database": {
+      "username": "username",
+      "password": "password",
+      "hostname": "hostname",
+      "port": 3306,
+      "database": "database"
+  },
+  "github": {
+      "hostname": "github.com",
+      "username": "username",
+      "password": "password"
+  },
+  "jenkins": {
+      "apps-cf.3di.corp.adobe.com": {
+          "username": "JENKINS_USERNAME",
+          "api_token": "JENKINS_API_TOKEN"
+      },
+      "apps-sj.ci.corp.adobe.com": {
+          "username": "JENKINS_USERNAME",
+          "api_token": "JENKINS_API_TOKEN"
+      }
+  },
+  "notification": {
+      "email": {
+          "relay_username": "relay_username",
+          "relay_password": "relay_password",
+          "relay_hostname": "relay_hostname",
+          "relay_port": 587
+      },
+      "slack": {}
+  }
+}
