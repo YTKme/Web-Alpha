@@ -1,16 +1,15 @@
 """Root Application
 
-The root application for the backend.
+The root application for the beta.
 """
 
 import random
 import string
 
+from beta import common
+from beta.database.database import database
 from flask import Flask
 from flask_session import Session
-
-from backend import common
-from backend.database.database import database
 
 
 # Application Factory
@@ -31,14 +30,14 @@ def create_application(configuration=None):
     )
 
     # Base Configuration
-    application.config.from_object('backend.configuration.BaseConfiguration')
+    application.config.from_object('beta.configuration.BaseConfiguration')
 
     if configuration is None:
         # Load the Production Configuration
-        # application.config.from_object('backend.configuration.ProductionConfiguration')
+        # application.config.from_object('beta.configuration.ProductionConfiguration')
 
         # Load the Development Configuration
-        application.config.from_object('backend.configuration.DevelopmentConfiguration')
+        application.config.from_object('beta.configuration.DevelopmentConfiguration')
     else:
         # Load the configuration if passed in
         application.config.from_mapping(configuration)
@@ -66,9 +65,9 @@ def register_blueprint(application):
     route_prefix = application.config['APPLICATION_ROOT']
 
     # Main
-    from backend.main import blueprint_main
+    from beta.main import blueprint_main
     application.register_blueprint(blueprint_main, url_prefix=f'/{route_prefix}')
 
     # Asset
-    from backend.asset import blueprint_asset
+    from beta.asset import blueprint_asset
     application.register_blueprint(blueprint_asset, url_prefix=f'/{route_prefix}/asset')

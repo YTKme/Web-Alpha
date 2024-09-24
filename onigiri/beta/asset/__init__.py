@@ -5,7 +5,7 @@ The asset blueprint implements the configuration for the asset package.
 
 from flask import Blueprint
 
-from backend import common
+from beta import common
 
 
 PROJECT_PREFIX = 'asset'
@@ -18,4 +18,4 @@ blueprint_asset = Blueprint(
 
 
 # Import `asset` module
-from backend.asset import asset
+from beta.asset import asset

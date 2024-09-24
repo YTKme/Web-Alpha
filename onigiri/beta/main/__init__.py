@@ -5,7 +5,7 @@ The main blueprint is the entry point for the application.
 
 from flask import Blueprint
 
-from backend import common
+from beta import common
 
 
 PROJECT_PREFIX = 'main'
@@ -22,4 +22,4 @@ blueprint_main = Blueprint(
 
 
 # Import `main` module
-from backend.main import main
+from beta.main import main

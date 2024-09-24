@@ -8,7 +8,7 @@ from flask import current_app
 # from flask import request
 # from flask import url_for
 
-from backend.main import blueprint_main
+from beta.main import blueprint_main
 
 
 # Root

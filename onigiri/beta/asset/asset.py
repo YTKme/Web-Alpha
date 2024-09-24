@@ -5,7 +5,7 @@ The asset route module for the application.
 
 from flask import current_app
 
-from backend.asset import blueprint_asset
+from beta.asset import blueprint_asset
 
 
 # Root

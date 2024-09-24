@@ -1,5 +1,4 @@
-from backend.application import create_application
-
+from beta.application import create_application
 
 onigiri = create_application()
 

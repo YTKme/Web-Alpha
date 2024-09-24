@@ -6,7 +6,7 @@ The configuration for the application.
 import random
 import string
 
-from backend import common
+from beta import common
 
 
 class BaseConfiguration(object):
