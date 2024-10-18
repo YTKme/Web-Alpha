@@ -5,6 +5,12 @@
 metadata.json
 _session
 
+# Bun
+bun.lockb
+
+# node
+package-lock.json
+
 ###########
 # Sandbox #
 ###########
@@ -26,8 +32,6 @@ onigiri/frontend/package-lock.json
 ##############
 # Watermelon #
 ##############
-
-watermelon/frontend/package-lock.json
 
 ########
 # node #
