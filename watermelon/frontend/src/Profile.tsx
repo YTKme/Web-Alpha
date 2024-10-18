@@ -8,10 +8,11 @@ import { UserClaims } from "@okta/okta-auth-js";
 import { useOktaAuth } from "@okta/okta-react";
 
 function Profile() {
-  // Context
-  const { authState, oktaAuth } = useOktaAuth();
   // State
   const [userProfile, setUserProfile] = useState<UserClaims | null>(null);
+
+  // Context
+  const { authState, oktaAuth } = useOktaAuth();
 
   useEffect(() => {
     if (!authState || !authState.isAuthenticated) {

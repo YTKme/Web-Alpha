@@ -3,22 +3,29 @@
  * Main Application
  */
 
-import { Route, Routes, useNavigate } from 'react-router-dom';
-// Okta
-import { LoginCallback, Security } from '@okta/okta-react';
-import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
+import reactArrayToTree from 'react-array-to-tree';
+import { useNavigate } from 'react-router-dom';
 
-import configuration from './configuration';
+// Okta
+import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
+import { Security } from '@okta/okta-react';
 
 import ApplicationRoute from './component/Route/ApplicationRoute';
+import configuration from './configuration';
+
+// Context
+import BootstrapProvider from './context/BootstrapContext';
 
 // Style
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './scss/Application.scss'
+import './scss/Application.scss';
 
 const oktaAuth = new OktaAuth(configuration.oidc)
 
-function Application() {
+const ProviderTree = reactArrayToTree([
+  <BootstrapProvider children={undefined} />,
+]);
+
+export default function Application() {
   const navigate = useNavigate();
 
   const restoreOriginalUri = async (_oktaAuth: unknown, originalUri: string) => {
@@ -30,9 +37,9 @@ function Application() {
       oktaAuth={oktaAuth}
       restoreOriginalUri={restoreOriginalUri}
     >
-      <ApplicationRoute />
+      <ProviderTree>
+        <ApplicationRoute />
+      </ProviderTree>
     </Security>
   );
-}
-
-export default Application;
+};

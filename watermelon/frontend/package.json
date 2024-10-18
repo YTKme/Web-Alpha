@@ -26,12 +26,13 @@
     "@okta/okta-auth-js": "^7.5",
     "@okta/okta-react": "^6.7",
     "@popperjs/core": "^2.11",
-    "bootstrap": "^5.3",
     "bootstrap-icons": "^1.11",
+    "bootstrap": "^5.3",
     "clsx": "^1",
-    "react": "^18",
+    "react-array-to-tree": "^2",
     "react-dom": "^18",
     "react-router-dom": "^6",
+    "react": "^18",
     "zustand": "^4"
   },
   "devDependencies": {
@@ -42,13 +43,14 @@
     "@typescript-eslint/parser": "^6.10",
     "@vitejs/plugin-react-swc": "^3.5",
     "autoprefixer": "^10",
-    "eslint": "^8",
     "eslint-plugin-react-hooks": "^4.6",
     "eslint-plugin-react-refresh": "^0.4",
+    "eslint": "^8",
     "postcss": "^8",
     "sass": "^1.69",
     "tailwindcss": "^3.3",
     "typescript": "^5.3",
+    "vite-plugin-svgr": "^4.2",
     "vite": "^5"
   }
 }

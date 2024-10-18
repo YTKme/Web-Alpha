@@ -1,5 +1,6 @@
-import react from '@vitejs/plugin-react-swc'
-import { defineConfig, loadEnv } from 'vite'
+import react from '@vitejs/plugin-react-swc';
+import { defineConfig, loadEnv } from 'vite';
+import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -18,7 +19,15 @@ export default defineConfig(({ mode }) => {
     },
 
     // Plugin
-    plugins: [react()],
+    plugins: [
+      react(),
+      svgr({
+        svgrOptions: {
+          dimensions: false,
+        },
+        include: "**/*.svg?react",
+      }),
+    ],
     // Build
     build: {}
   }
