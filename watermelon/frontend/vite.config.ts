@@ -19,5 +19,7 @@ export default defineConfig(({ mode }) => {
 
     // Plugin
     plugins: [react()],
+    // Build
+    build: {}
   }
 })
