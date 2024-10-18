@@ -1,4 +1,8 @@
 {
+  "editor.insertSpaces": true,
+  "[json]": {
+    "editor.tabSize": 2
+  },
   "[css]": {
     "editor.tabSize": 2
   },
@@ -6,18 +10,28 @@
     "editor.tabSize": 2
   },
   "[javascript]": {
+    "editor.formatOnSave": true,
     "editor.tabSize": 2
   },
   "[javascriptreact]": {
-    "editor.tabSize": 2
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
   },
   "[typescript]": {
-    "editor.tabSize": 2
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
   },
   "[typescriptreact]": {
-    "editor.tabSize": 2
-  },
-  "[json]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
     "editor.tabSize": 2
   },
   "[python]": {
@@ -28,7 +42,17 @@
     "editor.formatOnSave": false,
     "editor.tabSize": 4
   },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
-  }
+  "autopep8.args": [
+    "--experimental",
+    "--ignore=E501",
+    // "--max-line-length", "120",
+  ],
+  "python.testing.pytestArgs": [
+    "--showlocals",
+    "--capture=tee-sys",
+    "-vvvvv",
+    "--durations=0"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false
 }
