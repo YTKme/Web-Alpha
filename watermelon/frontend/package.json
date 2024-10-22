@@ -1,5 +1,6 @@
 {
   "name": "watermelon",
+  "private": true,
   "version": "0.0.1",
   "type": "module",
   "description": "Watermelon",
@@ -15,8 +16,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -49,7 +50,7 @@
     "postcss": "^8",
     "sass": "^1.69",
     "tailwindcss": "^3.3",
-    "typescript": "^5.3",
+    "typescript": "^5.5",
     "vite-plugin-svgr": "^4.2",
     "vite": "^5"
   }

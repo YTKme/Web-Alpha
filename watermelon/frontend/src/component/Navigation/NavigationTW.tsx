@@ -3,12 +3,7 @@
  * This component implements the navigation.
  */
 
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
-import viteLogo from '/res/img/vite.svg'
-
+import { Disclosure } from '@headlessui/react'
 
 export default function Navigation() {
   return (
