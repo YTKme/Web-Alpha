@@ -17,7 +17,7 @@ import configuration from './configuration';
 import BootstrapProvider from './context/BootstrapContext';
 
 // Style
-import './scss/Application.scss';
+import './Application.scss';
 
 const oktaAuth = new OktaAuth(configuration.oidc)
 

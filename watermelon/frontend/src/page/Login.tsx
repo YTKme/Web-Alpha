@@ -8,7 +8,7 @@ import { UserClaims } from '@okta/okta-auth-js';
 import { useOktaAuth } from '@okta/okta-react';
 
 // Style
-import '../scss/Login.scss';
+import './Login.scss';
 
 import watermelonLogo from '/res/img/watermelon.svg';
 
