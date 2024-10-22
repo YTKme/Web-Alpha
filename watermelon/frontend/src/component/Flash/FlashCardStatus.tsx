@@ -4,7 +4,7 @@
 
 import { fetchFlashCardStatus } from "../../library/FlashData";
 
-export function FlashCardStatus({
+export default function FlashCardStatus({
   cardId,
 }: {
   cardId: string;
@@ -12,7 +12,7 @@ export function FlashCardStatus({
   const flashCardStatus = async () => {
     console.debug('Fetching Flash Card Status...');
     try {
-      const status = use(fetchFlashCardStatus());
+      const status = await fetchFlashCardStatus();
       console.debug(`Flash Card Status: ${status}`);
       return status;
     } catch (error) {
@@ -25,36 +25,3 @@ export function FlashCardStatus({
     <span className='badge text-bg-success mx-2 p-2'>Success</span>
   );
 };
-
-import { useEffect, useState } from 'react';
-
-function use(promise: Promise<any>) {
-  const [state, setState] = useState({ status: 'pending', value: null, reason: null });
-
-  useEffect(() => {
-    let isMounted = true;
-    promise.then(
-      result => {
-        if (isMounted) {
-          setState({ status: 'fulfilled', value: result, reason: null });
-        }
-      },
-      reason => {
-        if (isMounted) {
-          setState({ status: 'rejected', value: null, reason });
-        }
-      }
-    );
-    return () => {
-      isMounted = false;
-    };
-  }, [promise]);
-
-  if (state.status === 'fulfilled') {
-    return state.value;
-  } else if (state.status === 'rejected') {
-    throw state.reason;
-  } else {
-    throw promise;
-  }
-}

@@ -2,15 +2,17 @@
  * Flash Page
  */
 
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 
 // Component
-import { FlashCardStatus } from "../component/Flash/FlashCardStatus";
+// import { FlashCardStatus } from "../component/Flash/FlashCardStatus";
 import Navigation from "../component/Header/Navigation";
 import { FlashCardStatusSkeleton } from "../component/Skeleton";
 
 // Style
 import './Flash.scss';
+
+const FlashCardStatus = lazy(() => wait(3000).then(() => import('../component/Flash/FlashCardStatus')));
 
 const cardList = [
   {
@@ -75,3 +77,9 @@ export default function Flash() {
     </div>
   );
 };
+
+function wait(time: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}

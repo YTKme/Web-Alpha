@@ -6,6 +6,6 @@ export async function fetchFlashCardStatus() {
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve('Success');
-    }, 3000);
+    }, 5000);
   });
 };
