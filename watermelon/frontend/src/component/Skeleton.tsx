@@ -4,6 +4,6 @@
 
 export function FlashCardStatusSkeleton() {
   return (
-    <span className='placeholder col-4 p-3'></span>
+    <span className='placeholder col-4 mx-2 p-3 rounded-2'></span>
   );
 };
