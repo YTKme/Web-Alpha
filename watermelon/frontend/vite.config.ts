@@ -12,6 +12,14 @@ export default defineConfig(({ mode }) => {
   console.debug('Mode:', mode)
 
   return {
+    // CSS
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        }
+      }
+    },
     // Environment Variable
     define: {
       'process.env.CLIENT_ID': JSON.stringify(env.Watermelon_SPA_CLIENT_ID || ''),
@@ -28,7 +36,5 @@ export default defineConfig(({ mode }) => {
         include: "**/*.svg?react",
       }),
     ],
-    // Build
-    build: {}
   }
 })

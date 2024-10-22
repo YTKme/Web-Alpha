@@ -27,15 +27,15 @@ export default function Navigation({ page }: { page: string }) {
             <hr className='d-lg-none text-white-50' />
             <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
               <li className='nav-item'>
-                {page === '/main'
-                  ? <a className='nav-link active' aria-current='page' href='/main'>Main</a>
-                  : <a className='nav-link' href='/main'>Home</a>
+                {page === '/home'
+                  ? <a className='nav-link active' aria-current='page' href='/home'>Home</a>
+                  : <a className='nav-link' href='/home'>Home</a>
                 }
               </li>
               <li className='nav-item'>
-                {page === '/asset'
-                  ? <a className='nav-link active' aria-current='page' href='/asset'>Asset</a>
-                  : <a className='nav-link' href='/asset'>Asset</a>
+                {page === '/flash'
+                  ? <a className='nav-link active' aria-current='page' href='/flash'>Flash</a>
+                  : <a className='nav-link' href='/flash'>Flash</a>
                 }
               </li>
             </ul>

@@ -4,13 +4,13 @@
 
 import { useEffect, useState } from 'react';
 // Okta
-import { useOktaAuth } from '@okta/okta-react';
 import { UserClaims } from '@okta/okta-auth-js';
+import { useOktaAuth } from '@okta/okta-react';
 
 // Style
-import './scss/Login.scss'
+import '../scss/Login.scss';
 
-import watermelonLogo from '/res/img/watermelon.svg'
+import watermelonLogo from '/res/img/watermelon.svg';
 
 function Login() {
   // State

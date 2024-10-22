@@ -10,7 +10,7 @@ import Navigation from "../component/Header/Navigation";
 import { FlashCardStatusSkeleton } from "../component/Skeleton";
 
 // Style
-import './Flash.scss';
+import '../scss/Flash.scss';
 
 const cardList = [
   {
@@ -41,7 +41,7 @@ const cardList = [
 
 export default function Flash() {
   return (
-    <div className='d-flex flex-column h-100 p-3'>
+    <div className='d-flex flex-column h-100 px-3'>
       <Navigation page='Home' />
       <div className='d-flex flex-column justify-content-center align-items-center flex-grow-1'>
         <h1>Hello Flash!</h1>
