@@ -10,7 +10,7 @@ import { useOktaAuth } from "@okta/okta-react";
 
 import Loading from "./Loading";
 
-function SecureRoute() {
+export default function SecureRoute() {
   // Context
   const { oktaAuth, authState } = useOktaAuth();
 
@@ -31,6 +31,4 @@ function SecureRoute() {
   }
 
   return (<Outlet />);
-}
-
-export default SecureRoute;
+};

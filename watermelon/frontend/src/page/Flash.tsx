@@ -5,12 +5,12 @@
 import { Suspense } from "react";
 
 // Component
-import { FlashCardStatus } from "../component/Flash/FlashStatus";
+import { FlashCardStatus } from "../component/Flash/FlashCardStatus";
 import Navigation from "../component/Header/Navigation";
 import { FlashCardStatusSkeleton } from "../component/Skeleton";
 
 // Style
-import '../scss/Flash.scss';
+import './Flash.scss';
 
 const cardList = [
   {
@@ -42,7 +42,7 @@ const cardList = [
 export default function Flash() {
   return (
     <div className='d-flex flex-column h-100 px-3'>
-      <Navigation page='Home' />
+      <Navigation page='/flash' />
       <div className='d-flex flex-column justify-content-center align-items-center flex-grow-1'>
         <h1>Hello Flash!</h1>
         <div className='container text-center'>
