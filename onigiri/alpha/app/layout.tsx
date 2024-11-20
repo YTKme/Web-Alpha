@@ -2,11 +2,19 @@
  * Root Layout
  */
 
-import { Viewport } from 'next'
+import { Metadata, Viewport } from 'next';
 
 // CSS
 import '@/style/global.scss';
 import './global.css';
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s 🍙 Onigiri 🍙',
+    default: '🍙 Onigiri 🍙',
+  },
+  description: '🍙 Onigiri 🍙',
+}
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -21,9 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-    <body>
-      {children}
-    </body>
+      <body>
+        {children}
+      </body>
     </html>
   )
 }
