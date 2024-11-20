@@ -4,6 +4,9 @@
 
 import { Metadata, Viewport } from 'next';
 
+// Context
+import BootstrapProvider from '@/app/_context/bootstrap';
+
 // CSS
 import '@/style/global.scss';
 import './global.css';
@@ -30,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        {children}
+        <BootstrapProvider>
+          {children}
+        </BootstrapProvider>
       </body>
     </html>
   )

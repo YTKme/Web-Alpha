@@ -2,10 +2,12 @@
  * Root Page
  */
 
-import Login from "@/component/Login/Login";
-
-export default function Page() {
+export default function RootPage() {
   return (
-    <Login />
+    <div className='d-flex flex-column h-100'>
+      <div className='d-flex justify-content-center align-items-center flex-grow-1'>
+        <h1>Hello Onigiri!</h1>
+      </div>
+    </div>
   );
 }
